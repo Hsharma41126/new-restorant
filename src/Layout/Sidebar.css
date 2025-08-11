@@ -1,0 +1,120 @@
+/* === Updated Sidebar Design === */
+
+/* Sidebar background: dark */
+.sidebar-container {
+  width: 240px;
+  background: #1f2937; /* dark background as in image */
+  height: 100vh;
+  overflow-y: auto;
+  transition: width 0.3s ease;
+
+  z-index: 1;
+  position: fixed;
+  scrollbar-width: none;
+  box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+  border-right: 1px solid #1f2937; /* remove light border */
+}
+
+.sidebar-container::-webkit-scrollbar {
+  display: none;
+}
+
+.sidebar-container.collapsed {
+  width: 80px;
+}
+
+.sidebar-container.collapsed .menu .menu-text {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.sidebar {
+  padding: 15px 10px;
+}
+
+.menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+  margin-bottom: 8px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.menu-item:hover {
+  transform: translateX(5px);
+}
+
+.menu-link {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  text-decoration: none;
+  color: #d1d5db; /* light text */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.menu-link:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #facc15; /* yellow hover text */
+  box-shadow: none;
+}
+
+.menu-link:hover i {
+  color: #facc15; /* yellow icon */
+  transform: scale(1.1);
+}
+
+.menu-link i {
+  font-size: 18px;
+  transition: all 0.3s ease;
+  color: #9ca3af; /* muted icon */
+  min-width: 24px;
+  text-align: center;
+}
+
+.menu-text {
+  margin-left: 12px;
+  transition: all 0.3s ease;
+}
+
+/* Active item: yellow highlight */
+.menu-item.active .menu-link {
+  background: #facc15; /* yellow background */
+  color: #1f2937; /* dark text for contrast */
+  box-shadow: none;
+}
+
+.menu-item.active .menu-link i {
+  color: #1f2937;
+}
+
+.menu-item.active::before {
+  display: none; /* remove extra left bar */
+}
+
+@media only screen and (max-width: 768px) {
+  .sidebar-container.collapsed {
+    width: 0px;
+    overflow: hidden;
+    min-width: 0;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .sidebar-container.collapsed {
+    display: none;
+  }
+}
+
+

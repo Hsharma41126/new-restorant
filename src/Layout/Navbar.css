@@ -1,0 +1,158 @@
+/* Navbar.css */
+.navbar {
+  height: 75px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
+  background: #1f2937;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+}
+
+.navbar-brand img {
+  height: 35px;
+  width: auto;
+  transition: all 0.3s ease;
+}
+
+.navbar-toggler {
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
+.navbar-toggler:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.navbar-content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.time-display {
+  color: white;
+  text-align: right;
+  margin-right: 1rem;
+}
+
+.time-display .small {
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+.time-display .fw-bold {
+  font-size: 0.9rem;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.25rem;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.dropdown-toggle:focus {
+  outline: none;
+}
+
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  min-width: 200px;
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 0;
+  z-index: 1000;
+  display: none;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+.dropdown-item {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #333;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background: #f8f9fa;
+  color: #1f2937;
+}
+
+.dropdown-divider {
+  height: 1px;
+  background: #e9ecef;
+  margin: 0.5rem 0;
+}
+
+.bell-icon {
+  color: #fbbf24;
+  transition: all 0.3s ease;
+}
+
+.bell-icon:hover {
+  color: #f59e0b;
+  transform: scale(1.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar {
+    height: 60px;
+    padding: 0 0.5rem;
+  }
+  
+  .navbar-brand img {
+    height: 30px;
+  }
+  
+  .time-display .small {
+    font-size: 0.65rem;
+  }
+  
+  .time-display .fw-bold {
+    font-size: 0.8rem;
+  }
+  
+  .dropdown-toggle {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .time-display {
+    display: none;
+  }
+}
